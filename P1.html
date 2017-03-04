@@ -11809,10 +11809,10 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#importing some useful packages</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># importing some useful packages</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">matplotlib.image</span> <span class="k">as</span> <span class="nn">mpimg</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -11821,23 +11821,6 @@ div#notebook {
 </pre></div>
 
 </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area"><div class="prompt"></div>
-<div class="output_subarea output_stream output_stderr output_text">
-<pre>/Users/angelvidal/anaconda3/envs/python3env/lib/python3.5/site-packages/matplotlib/font_manager.py:273: UserWarning: Matplotlib is building the font cache using fc-list. This may take a moment.
-  warnings.warn(&#39;Matplotlib is building the font cache using fc-list. This may take a moment.&#39;)
-/Users/angelvidal/anaconda3/envs/python3env/lib/python3.5/site-packages/matplotlib/font_manager.py:273: UserWarning: Matplotlib is building the font cache using fc-list. This may take a moment.
-  warnings.warn(&#39;Matplotlib is building the font cache using fc-list. This may take a moment.&#39;)
-</pre>
-</div>
-</div>
-
 </div>
 </div>
 
@@ -11853,13 +11836,13 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#reading in an image</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># reading in an image</span>
 <span class="n">image</span> <span class="o">=</span> <span class="n">mpimg</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="s1">&#39;test_images/solidWhiteRight.jpg&#39;</span><span class="p">)</span>
 
-<span class="c1">#printing out some stats and plotting</span>
+<span class="c1"># printing out some stats and plotting</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;This image is:&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">image</span><span class="p">),</span> <span class="s1">&#39;with dimesions:&#39;</span><span class="p">,</span> <span class="n">image</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>  <span class="c1"># if you wanted to show a single color channel image called &#39;gray&#39;, for example, call as plt.imshow(gray, cmap=&#39;gray&#39;)</span>
 </pre></div>
@@ -11879,11 +11862,11 @@ div#notebook {
 </div>
 </div>
 
-<div class="output_area"><div class="prompt output_prompt">Out[2]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[8]:</div>
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&lt;matplotlib.image.AxesImage at 0x10ed28748&gt;</pre>
+<pre>&lt;matplotlib.image.AxesImage at 0x1142d5940&gt;</pre>
 </div>
 
 </div>
@@ -14550,10 +14533,11 @@ SCONNFKg/wER7tXwK5admQAAAABJRU5ErkJggg==
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
+
 
 <span class="k">def</span> <span class="nf">grayscale</span><span class="p">(</span><span class="n">img</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Applies the Grayscale transform</span>
@@ -14565,13 +14549,16 @@ SCONNFKg/wER7tXwK5admQAAAABJRU5ErkJggg==
     <span class="c1"># Or use BGR2GRAY if you read an image with cv2.imread()</span>
     <span class="c1"># return cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)</span>
     
+    
 <span class="k">def</span> <span class="nf">canny</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">low_threshold</span><span class="p">,</span> <span class="n">high_threshold</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Applies the Canny transform&quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">cv2</span><span class="o">.</span><span class="n">Canny</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">low_threshold</span><span class="p">,</span> <span class="n">high_threshold</span><span class="p">)</span>
 
+
 <span class="k">def</span> <span class="nf">gaussian_blur</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">kernel_size</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Applies a Gaussian Noise kernel&quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">cv2</span><span class="o">.</span><span class="n">GaussianBlur</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="p">(</span><span class="n">kernel_size</span><span class="p">,</span> <span class="n">kernel_size</span><span class="p">),</span> <span class="mi">0</span><span class="p">)</span>
+
 
 <span class="k">def</span> <span class="nf">region_of_interest</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">vertices</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
@@ -14580,22 +14567,23 @@ SCONNFKg/wER7tXwK5admQAAAABJRU5ErkJggg==
 <span class="sd">    Only keeps the region of the image defined by the polygon</span>
 <span class="sd">    formed from `vertices`. The rest of the image is set to black.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="c1">#defining a blank mask to start with</span>
+    <span class="c1"># defining a blank mask to start with</span>
     <span class="n">mask</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">img</span><span class="p">)</span>   
     
-    <span class="c1">#defining a 3 channel or 1 channel color to fill the mask with depending on the input image</span>
+    <span class="c1"># defining a 3 channel or 1 channel color to fill the mask with depending on the input image</span>
     <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">img</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">2</span><span class="p">:</span>
         <span class="n">channel_count</span> <span class="o">=</span> <span class="n">img</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>  <span class="c1"># i.e. 3 or 4 depending on your image</span>
         <span class="n">ignore_mask_color</span> <span class="o">=</span> <span class="p">(</span><span class="mi">255</span><span class="p">,)</span> <span class="o">*</span> <span class="n">channel_count</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="n">ignore_mask_color</span> <span class="o">=</span> <span class="mi">255</span>
         
-    <span class="c1">#filling pixels inside the polygon defined by &quot;vertices&quot; with the fill color    </span>
+    <span class="c1"># filling pixels inside the polygon defined by &quot;vertices&quot; with the fill color    </span>
     <span class="n">cv2</span><span class="o">.</span><span class="n">fillPoly</span><span class="p">(</span><span class="n">mask</span><span class="p">,</span> <span class="n">vertices</span><span class="p">,</span> <span class="n">ignore_mask_color</span><span class="p">)</span>
     
     <span class="c1">#returning the image only where mask pixels are nonzero</span>
     <span class="n">masked_image</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">bitwise_and</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">mask</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">masked_image</span>
+
 
 <span class="k">def</span> <span class="nf">draw_lines</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">lines</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="p">[</span><span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">thickness</span><span class="o">=</span><span class="mi">2</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
@@ -14665,7 +14653,7 @@ SCONNFKg/wER7tXwK5admQAAAABJRU5ErkJggg==
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># debugging flag</span>
@@ -14704,9 +14692,10 @@ SCONNFKg/wER7tXwK5admQAAAABJRU5ErkJggg==
     <span class="k">for</span> <span class="n">x1</span><span class="p">,</span><span class="n">y1</span><span class="p">,</span><span class="n">x2</span><span class="p">,</span><span class="n">y2</span> <span class="ow">in</span> <span class="n">line</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">((</span><span class="n">x2</span><span class="o">-</span><span class="n">x1</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="p">(</span><span class="n">y2</span><span class="o">-</span><span class="n">y1</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
 
-<span class="k">def</span> <span class="nf">regression_linear</span><span class="p">(</span><span class="n">lines</span><span class="p">,</span> <span class="n">Y1</span><span class="o">=</span><span class="n">left_md</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">Y2</span><span class="o">=</span><span class="n">left_bt</span><span class="p">[</span><span class="mi">1</span><span class="p">]):</span>
+    
+<span class="k">def</span> <span class="nf">linear_regression</span><span class="p">(</span><span class="n">lines</span><span class="p">,</span> <span class="n">Y1</span><span class="o">=</span><span class="n">left_md</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">Y2</span><span class="o">=</span><span class="n">left_bt</span><span class="p">[</span><span class="mi">1</span><span class="p">]):</span>
     <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    return the first order linear regression of the input lines</span>
+<span class="sd">    returns the first order linear regression of the input lines</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">X</span><span class="p">,</span> <span class="n">Y</span> <span class="o">=</span> <span class="p">[],[]</span>
     <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">lines</span><span class="p">:</span>
@@ -14754,7 +14743,8 @@ SCONNFKg/wER7tXwK5admQAAAABJRU5ErkJggg==
         
     <span class="c1"># canny with the red and green, it seems the blue channel gives much noise...</span>
     <span class="c1"># and perform an OR of both red and green canny results</span>
-    <span class="c1"># threshold levels</span>
+    
+    <span class="c1"># threshold levels (full range at this moment)</span>
     <span class="n">red_lo_t</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="n">red_hi_t</span> <span class="o">=</span> <span class="mi">255</span>
     <span class="n">green_lo_t</span> <span class="o">=</span> <span class="mi">0</span>
@@ -14802,8 +14792,8 @@ SCONNFKg/wER7tXwK5admQAAAABJRU5ErkJggg==
     <span class="n">right_lines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">previous_line_r</span><span class="o">.</span><span class="n">points</span><span class="p">)</span>
     
     <span class="c1"># regression on left&amp;right lines</span>
-    <span class="n">left_line</span><span class="p">,</span> <span class="n">left_flag</span> <span class="o">=</span> <span class="n">regression_linear</span><span class="p">(</span><span class="n">left_lines</span><span class="p">)</span>
-    <span class="n">right_line</span><span class="p">,</span> <span class="n">right_flag</span> <span class="o">=</span> <span class="n">regression_linear</span><span class="p">(</span><span class="n">right_lines</span><span class="p">)</span>
+    <span class="n">left_line</span><span class="p">,</span> <span class="n">left_flag</span> <span class="o">=</span> <span class="n">linear_regression</span><span class="p">(</span><span class="n">left_lines</span><span class="p">)</span>
+    <span class="n">right_line</span><span class="p">,</span> <span class="n">right_flag</span> <span class="o">=</span> <span class="n">linear_regression</span><span class="p">(</span><span class="n">right_lines</span><span class="p">)</span>
     
     <span class="c1">#if regression worked ok use the polynomial to draw the line and store them</span>
     <span class="k">if</span> <span class="n">left_flag</span><span class="p">:</span>
@@ -14826,7 +14816,7 @@ SCONNFKg/wER7tXwK5admQAAAABJRU5ErkJggg==
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="prompt input_prompt">In&nbsp;[11]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
@@ -14841,9 +14831,10 @@ SCONNFKg/wER7tXwK5admQAAAABJRU5ErkJggg==
 <span class="k">for</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="s2">&quot;test_images/&quot;</span><span class="p">):</span>
     <span class="n">image</span> <span class="o">=</span> <span class="n">mpimg</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="n">test_folder</span> <span class="o">+</span> <span class="n">file</span><span class="p">)</span>
     <span class="n">image</span> <span class="o">=</span> <span class="n">pipeline</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
-    
     <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
+
+    
 </pre></div>
 
 </div>
@@ -29862,11 +29853,12 @@ MNJII4000kgjeRpBwUgjjTTSSCONBIygYKSRRhpppJFG8jSCgpFGGmmkkUYaCRhBwUgjjTTSSCON
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="prompt input_prompt">In&nbsp;[12]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># TODO: Build your pipeline that will draw lane lines on the test_images</span>
 <span class="c1"># then save them to the test_images directory.</span>
+<span class="c1"># DONE!</span>
 </pre></div>
 
 </div>
@@ -29896,7 +29888,7 @@ imageio.plugins.ffmpeg.download()</code></pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="prompt input_prompt">In&nbsp;[13]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Import everything needed to edit/save/watch video clips</span>
@@ -29911,16 +29903,16 @@ imageio.plugins.ffmpeg.download()</code></pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[8]:</div>
+<div class="prompt input_prompt">In&nbsp;[14]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># this cell was not necessary since the main pipeline was enough to process the viedeos</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># this cell was not necessary since the main pipeline was enough to process the videos</span>
 <span class="k">def</span> <span class="nf">process_image</span><span class="p">(</span><span class="n">image</span><span class="p">):</span>
     <span class="c1"># NOTE: The output you return should be a color image (3 channel) for processing video below</span>
     <span class="c1"># TODO: put your pipeline here,</span>
     <span class="c1"># you should return the final output (image where lines are drawn on lanes)</span>
-
-    <span class="k">return</span> <span class="n">result</span>
+    
+    <span class="k">return</span> <span class="kc">None</span>
 </pre></div>
 
 </div>
@@ -29940,7 +29932,7 @@ imageio.plugins.ffmpeg.download()</code></pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="prompt input_prompt">In&nbsp;[15]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># initiates the line instances:</span>
@@ -29972,7 +29964,7 @@ imageio.plugins.ffmpeg.download()</code></pre>
 
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stderr output_text">
-<pre>100%|█████████▉| 221/222 [00:04&lt;00:00, 45.53it/s]
+<pre>100%|█████████▉| 221/222 [00:05&lt;00:00, 43.27it/s]
 </pre>
 </div>
 </div>
@@ -29982,8 +29974,8 @@ imageio.plugins.ffmpeg.download()</code></pre>
 <pre>[MoviePy] Done.
 [MoviePy] &gt;&gt;&gt;&gt; Video ready: white.mp4 
 
-CPU times: user 3.59 s, sys: 255 ms, total: 3.85 s
-Wall time: 5.42 s
+CPU times: user 3.7 s, sys: 292 ms, total: 3.99 s
+Wall time: 5.5 s
 </pre>
 </div>
 </div>
@@ -30004,7 +29996,7 @@ Wall time: 5.42 s
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[10]:</div>
+<div class="prompt input_prompt">In&nbsp;[16]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">HTML</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;</span>
@@ -30022,7 +30014,7 @@ Wall time: 5.42 s
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[10]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[16]:</div>
 
 <div class="output_html rendered_html output_subarea output_execute_result">
 
@@ -30061,7 +30053,7 @@ Wall time: 5.42 s
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[11]:</div>
+<div class="prompt input_prompt">In&nbsp;[17]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">previous_line_l</span> <span class="o">=</span> <span class="n">line</span><span class="p">()</span>
@@ -30091,7 +30083,7 @@ Wall time: 5.42 s
 
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stderr output_text">
-<pre>100%|█████████▉| 681/682 [00:15&lt;00:00, 43.00it/s]
+<pre>100%|█████████▉| 681/682 [00:14&lt;00:00, 48.48it/s]
 </pre>
 </div>
 </div>
@@ -30101,8 +30093,8 @@ Wall time: 5.42 s
 <pre>[MoviePy] Done.
 [MoviePy] &gt;&gt;&gt;&gt; Video ready: yellow.mp4 
 
-CPU times: user 11.1 s, sys: 811 ms, total: 12 s
-Wall time: 16.4 s
+CPU times: user 11 s, sys: 787 ms, total: 11.8 s
+Wall time: 15 s
 </pre>
 </div>
 </div>
@@ -30113,7 +30105,7 @@ Wall time: 16.4 s
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[12]:</div>
+<div class="prompt input_prompt">In&nbsp;[18]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">HTML</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;</span>
@@ -30131,7 +30123,7 @@ Wall time: 16.4 s
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[12]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[18]:</div>
 
 <div class="output_html rendered_html output_subarea output_execute_result">
 
@@ -30169,7 +30161,7 @@ Wall time: 16.4 s
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[13]:</div>
+<div class="prompt input_prompt">In&nbsp;[19]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">previous_line_l</span> <span class="o">=</span> <span class="n">line</span><span class="p">()</span>
@@ -30232,7 +30224,8 @@ Wall time: 16.4 s
     <span class="n">left_lines</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="n">left_slopes</span> <span class="o">=</span> <span class="p">[]</span>
     
-    <span class="c1"># separate lines into left and right depending on their slopes:</span>
+    <span class="c1"># separate lines into left and right depending on their slopes</span>
+    <span class="c1"># This time I&#39;ve used a controlled slope interval allowing only &quot;good&quot; detections to be appended:</span>
     <span class="k">try</span><span class="p">:</span>
         <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">lines</span><span class="p">:</span>
             <span class="k">if</span> <span class="n">line_slope</span><span class="p">(</span><span class="n">line</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mf">0.4</span> <span class="ow">and</span> <span class="n">line_slope</span><span class="p">(</span><span class="n">line</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mf">0.8</span><span class="p">:</span>
@@ -30252,8 +30245,8 @@ Wall time: 16.4 s
     <span class="n">right_lines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">previous_line_r</span><span class="o">.</span><span class="n">points</span><span class="p">)</span>
     
     <span class="c1"># regression on left&amp;right lines</span>
-    <span class="n">left_line</span><span class="p">,</span> <span class="n">left_flag</span> <span class="o">=</span> <span class="n">regression_linear</span><span class="p">(</span><span class="n">left_lines</span><span class="p">)</span>
-    <span class="n">right_line</span><span class="p">,</span> <span class="n">right_flag</span> <span class="o">=</span> <span class="n">regression_linear</span><span class="p">(</span><span class="n">right_lines</span><span class="p">)</span>
+    <span class="n">left_line</span><span class="p">,</span> <span class="n">left_flag</span> <span class="o">=</span> <span class="n">linear_regression</span><span class="p">(</span><span class="n">left_lines</span><span class="p">)</span>
+    <span class="n">right_line</span><span class="p">,</span> <span class="n">right_flag</span> <span class="o">=</span> <span class="n">linear_regression</span><span class="p">(</span><span class="n">right_lines</span><span class="p">)</span>
     
     <span class="c1">#if regression worked ok use the polynomial to draw the line and store them</span>
     <span class="k">if</span> <span class="n">left_flag</span><span class="p">:</span>
@@ -30295,7 +30288,7 @@ Wall time: 16.4 s
 
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stderr output_text">
-<pre>100%|██████████| 251/251 [00:10&lt;00:00, 25.93it/s]
+<pre>100%|██████████| 251/251 [00:09&lt;00:00, 25.95it/s]
 </pre>
 </div>
 </div>
@@ -30305,8 +30298,8 @@ Wall time: 16.4 s
 <pre>[MoviePy] Done.
 [MoviePy] &gt;&gt;&gt;&gt; Video ready: extra.mp4 
 
-CPU times: user 8.71 s, sys: 452 ms, total: 9.16 s
-Wall time: 11.3 s
+CPU times: user 8.61 s, sys: 449 ms, total: 9.06 s
+Wall time: 10.5 s
 </pre>
 </div>
 </div>
@@ -30317,7 +30310,7 @@ Wall time: 11.3 s
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[14]:</div>
+<div class="prompt input_prompt">In&nbsp;[20]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">HTML</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;</span>
@@ -30335,7 +30328,7 @@ Wall time: 11.3 s
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[14]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[20]:</div>
 
 <div class="output_html rendered_html output_subarea output_execute_result">
 
@@ -30350,6 +30343,29 @@ Wall time: 11.3 s
 </div>
 </div>
 
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Finding-Lane-Lines-on-the-Road"><strong>Finding Lane Lines on the Road</strong><a class="anchor-link" href="#Finding-Lane-Lines-on-the-Road">&#182;</a></h1><h2 id="Writeup">Writeup<a class="anchor-link" href="#Writeup">&#182;</a></h2><h3 id="Reflection">Reflection<a class="anchor-link" href="#Reflection">&#182;</a></h3><h3 id="1.-Pipeline-description">1. Pipeline description<a class="anchor-link" href="#1.-Pipeline-description">&#182;</a></h3><p>My pipeline consisted of 5 steps:</p>
+<h4 id="1.-Color-extraction">1. Color extraction<a class="anchor-link" href="#1.-Color-extraction">&#182;</a></h4><p>At this step I've tried a greyscale transformation but I realized that using a combination of red and green channels seems to work better. So, I've extracted red and green color channels from the image.</p>
+<h4 id="2.-Canny">2. Canny<a class="anchor-link" href="#2.-Canny">&#182;</a></h4><p>Apply border detection to green and red channels obtaining two binarized images. Threshold levels were left wide open (0-255) since the pipeline worked pretty well with this levels.
+These new binary images are combined with a logical OR function.</p>
+<h4 id="3.-Region-of-interest-masking">3. Region of interest masking<a class="anchor-link" href="#3.-Region-of-interest-masking">&#182;</a></h4><p>Apply a mask to remove all the non usable parts of the image.</p>
+<h4 id="4.-Hough">4. Hough<a class="anchor-link" href="#4.-Hough">&#182;</a></h4><p>Apply the lines detection function to the binary image obtaining a bunch of lines.</p>
+<h4 id="5.-Lines-separation">5. Lines separation<a class="anchor-link" href="#5.-Lines-separation">&#182;</a></h4><p>Lines are separated using their slope, a positive slope means a right line and viceversa.</p>
+<h4 id="6.-Linear-regression">6. Linear regression<a class="anchor-link" href="#6.-Linear-regression">&#182;</a></h4><p>Perform a linear regression to each set of lines obtaining two master lines. These lines are extended to cover all the range of interest. If linear regression worked ok the obtained lines are then stored into a class to be used in the next frames.</p>
+<h4 id="7.-Lines-drawing">7. Lines drawing<a class="anchor-link" href="#7.-Lines-drawing">&#182;</a></h4><p>Draw the lines onto the original frame.</p>
+<h4 id="8.-Smoothing">8. Smoothing<a class="anchor-link" href="#8.-Smoothing">&#182;</a></h4><p>If linear regression doesn't return valid lines, the previous frame line is drawn instead. This way we get a much mode stable lines.</p>
+<h3 id="2.-Identify-potential-shortcomings-with-your-current-pipeline">2. Identify potential shortcomings with your current pipeline<a class="anchor-link" href="#2.-Identify-potential-shortcomings-with-your-current-pipeline">&#182;</a></h3><p>The pipeline works pretty well with straight lines, the main shortcoming I think is the curved lines. Maybe a second order linear regression could be used to identify lines.</p>
+<p>Another shortcoming could be when image presents heavy color/contrast changes that could means much noise coming into the lines detector. This could cause much noisy lines to merge and maybe the linear regressor could not manage with good results.</p>
+<h3 id="3.-Suggest-possible-improvements-to-your-pipeline">3. Suggest possible improvements to your pipeline<a class="anchor-link" href="#3.-Suggest-possible-improvements-to-your-pipeline">&#182;</a></h3><p>A possible improvement would be using a second order polynomial regression to manage curved roads/lanes.</p>
+<p>Another potential improvement could be include a measurement of the off-center deviation of the car, it could help to maintain the car between the lines. :)</p>
+
+</div>
+</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
